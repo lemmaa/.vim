@@ -70,7 +70,7 @@ fi
 #
 command -v cargo > /dev/null 2>&1 || (curl https://sh.rustup.rs -sSf | sh)
 pushd ${BUNDLE_PATH}/YouCompleteMe
-./install.py --all
+PATH="$HOME/.cargo/bin:$PATH" ./install.py --all
 popd
 
 #
