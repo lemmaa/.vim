@@ -5,6 +5,11 @@ AUTOLOAD_PATH=${VIM_BASE}/autoload
 BUNDLE_PATH=${VIM_BASE}/bundle
 
 #
+# get sudo permission
+#
+sudo echo -n
+
+#
 # install plug-ins
 #
 git submodule update --init --recursive
@@ -24,9 +29,9 @@ fi
 # - compile language support module
 #
 HOST_OS=$(uname -s)
-if [ "${HOST_OS}"=="Linux" ]; then
+if [ "${HOST_OS}" == "Linux" ]; then
   sudo apt --yes install nodejs npm mono-devel
-elif [ "${HOST_OS}"=="Darwin" ]; then
+elif [ "${HOST_OS}" == "Darwin" ]; then
   brew update && brew install node.js npm mono
 fi
 # install rust cargo
