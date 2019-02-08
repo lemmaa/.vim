@@ -3,6 +3,7 @@
 VIM_BASE=${HOME}/.vim
 AUTOLOAD_PATH=${VIM_BASE}/autoload
 BUNDLE_PATH=${VIM_BASE}/bundle
+HOST_OS=$(uname -s)
 
 #
 # get sudo permission
@@ -10,7 +11,7 @@ BUNDLE_PATH=${VIM_BASE}/bundle
 sudo echo -n
 
 #
-# install plug-ins
+# install vim plug-ins
 #
 git submodule update --init --recursive
 
@@ -22,19 +23,51 @@ if [ -d ~/.fzf ]; then
 else
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 fi
-  ~/.fzf/install --all
+~/.fzf/install --all
 
 #
-# initialize YCM plug-in
-# - compile language support module
+# update package catalog
 #
-HOST_OS=$(uname -s)
 if [ "${HOST_OS}" == "Linux" ]; then
-  sudo apt --yes install nodejs npm mono-devel
+  sudo apt update
 elif [ "${HOST_OS}" == "Darwin" ]; then
-  brew update && brew install node.js npm mono
+  brew update
 fi
-# install rust cargo
+
+#
+# install the silver searcher (for fzf)
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  command -v ag --version || sudo apt --yes install silversearcher-ag
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v ag --version || brew install the_silver_searcher
+fi
+
+#
+# install the ripgrep (for fzf)
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  command -v fd --version || sudo apt --yes install ripgrep
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v fd --version || brew install ripgrep
+fi
+
+#
+# initialize YCM plug-in & compile language support module
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  command -v node --version || sudo apt --yes install nodejs
+  command -v npm || sudo apt --yes install npm
+  command -v mono --version || sudo apt --yes install mono-devel
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v node --version || brew install node.js
+  command -v npm || brew install npm
+  command -v mono --version || brew install mono
+fi
+
+#
+# install rust cargo (for YCM)
+#
 command -v cargo > /dev/null 2>&1 || (curl https://sh.rustup.rs -sSf | sh)
 pushd ${BUNDLE_PATH}/YouCompleteMe
 ./install.py --all
