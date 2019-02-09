@@ -1,4 +1,6 @@
-execute pathogen#infect()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 syntax on
 filetype plugin indent on
 
@@ -101,4 +103,3 @@ let g:ConqueTerm_StartMessages=0    " display warning message if conqueTerm is c
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
-
