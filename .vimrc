@@ -14,11 +14,16 @@ set clipboard=unnamed
 "set paste
 "set mouse=a
 
-nmap <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 colorscheme codedark
 "let g:airline_theme = 'dark'
+
+"
+" NERDTree
+"
+nmap <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "
 " ctrlp.vim
