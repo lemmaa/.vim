@@ -116,4 +116,7 @@ let b:SimpylFold_fold_docstring = 1
 let g:SimpylFold_fold_import = 1
 let b:SimpylFold_fold_import = 1
 
-
+"
+" fastfold
+"
+let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
