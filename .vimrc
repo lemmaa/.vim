@@ -20,10 +20,10 @@ set clipboard=unnamed
 nmap <F8> :TagbarToggle<CR>
 
 "" split navigations
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 colorscheme codedark
 "let g:airline_theme = 'dark'
@@ -117,7 +117,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
 let g:UltiSnipsExpandTrigger="<C-K>"
 let g:UltiSnipsJumpForwardTrigger="<C-K>"
-let g:UltiSnipsJumpBackwardTrigger="<C-I>"
+let g:UltiSnipsJumpBackwardTrigger="<C-J>"
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
