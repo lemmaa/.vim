@@ -64,3 +64,6 @@
 [submodule "bundle/vim-stay"]
 	path = bundle/vim-stay
 	url = https://github.com/zhimsel/vim-stay.git
+[submodule "bundle/SimpylFold"]
+	path = bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
