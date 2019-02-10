@@ -59,10 +59,12 @@ if [ "${HOST_OS}" == "Linux" ]; then
   command -v node --version || sudo apt --yes install nodejs
   command -v npm || sudo apt --yes install npm
   command -v mono --version || sudo apt --yes install mono-devel
+  command -v go version || sudo apt --yes install golang
 elif [ "${HOST_OS}" == "Darwin" ]; then
   command -v node --version || brew install node.js
   command -v npm || brew install npm
   command -v mono --version || brew install mono
+  command -v go version || brew install golang
 fi
 
 #
