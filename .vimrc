@@ -152,6 +152,14 @@ let b:SimpylFold_fold_import = 1
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
 "
+" rainbow_parentheses
+"
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
+" List of colors that you do not want. ANSI code or #RRGGBB
+let g:rainbow#blacklist = [233, 234]
+
+"
 " csv.vim
 "
 "let g:csv_move_folds = 1
