@@ -79,3 +79,6 @@
 [submodule "bundle/SudoEdit.vim"]
 	path = bundle/SudoEdit.vim
 	url = https://github.com/chrisbra/SudoEdit.vim.git
+[submodule "bundle/csv.vim"]
+	path = bundle/csv.vim
+	url = https://github.com/chrisbra/csv.vim.git
