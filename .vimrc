@@ -82,7 +82,7 @@ let g:cpp_simple_highlight = 1
 "
 " powerline
 "
-set rtp+=$PYTHON_USER_PACKAGE_BASE/powerline/bindings/vim/
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
 
