@@ -136,6 +136,14 @@ let b:SimpylFold_fold_import = 1
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
 "
+" csv.vim
+"
+"let g:csv_move_folds = 1
+"let g:csv_highlight_column = 'y'
+"let b:csv_thousands_sep = ' '
+"let b:csv_decimal_sep = ','
+
+"
 " python formatting
 "
 " au BufNewFile,BufRead *.py
