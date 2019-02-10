@@ -8,13 +8,22 @@ set encoding=utf-8
 
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set ignorecase
 set colorcolumn=100
 set clipboard=unnamed
+"set foldmethod=syntax
+"set foldlevelstart=99
 "set paste
 "set mouse=a
 
 nmap <F8> :TagbarToggle<CR>
+
+"" split navigations
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 colorscheme codedark
 "let g:airline_theme = 'dark'
@@ -25,12 +34,6 @@ colorscheme codedark
 nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-"
-" ctrlp.vim
-"
-"nmap <C-p> :CtrlP<CR>
-"let g:ctrlp_working_path_mode = 'ra'
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.exe,*.dll,*.o,*.obj,*.pdb,*.dbg 
 
 "
 " airline
@@ -99,16 +102,22 @@ let g:ConqueTerm_CloseOnEnd=1       " close conque when program ends running
 let g:ConqueTerm_StartMessages=0    " display warning message if conqueTerm is configed incorrect
 
 "
+" YouCompleteMe
+" 
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"
 " UltiSnips
 "
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+"let g:UltiSnipsExpandTrigger="<TAB>"
+"let g:UltiSnipsJumpForwardTrigger="<C-B>"
+"let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
+let g:UltiSnipsExpandTrigger="<C-K>"
+let g:UltiSnipsJumpForwardTrigger="<C-K>"
+let g:UltiSnipsJumpBackwardTrigger="<C-I>"
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 
@@ -125,3 +134,21 @@ let b:SimpylFold_fold_import = 1
 " fastfold
 "
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
+
+"
+" python formatting
+"
+" au BufNewFile,BufRead *.py
+"     \ set tabstop=4
+"     \ set shiftwidth=4
+"     \ set softtabstop=4
+"     \ set textwidth=79
+"     \ set colorcolumn=80
+"     \ set expandtab
+"     \ set autoindent
+"     \ set fileformat=unix
+
+"
+" mark unnecessary white space to red
+"
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
