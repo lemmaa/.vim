@@ -33,6 +33,7 @@ colorscheme codedark
 "
 nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 
 "
