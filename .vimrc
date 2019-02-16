@@ -161,6 +161,31 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 let g:rainbow#blacklist = [233, 234]
 
 "
+" vim-hightlightyank
+"
+let g:highlightedyank_highlight_duration = 1000
+"highlight HighlightedyankRegion cterm=reverse gui=reverse
+if !exists('##TextYankPost')
+	  map y <Plug>(highlightedyank)
+	endif
+
+"
+" switch.vim
+"
+let g:switch_mapping = ""
+let b:switch_custom_definitions = [
+	    \   ['foo', 'bar', 'baz'],
+      \   {
+      \     '\<[a-z0-9]\+_\k\+\>': {
+      \       '_\(.\)': '\U\1'
+      \     },
+      \     '\<[a-z0-9]\+[A-Z]\k\+\>': {
+      \       '\([A-Z]\)': '_\l\1'
+      \     },
+      \   }
+      \ ]
+
+"
 " csv.vim
 "
 "let g:csv_move_folds = 1
