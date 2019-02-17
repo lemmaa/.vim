@@ -185,6 +185,14 @@ let b:switch_custom_definitions = [
       \   }
       \ ]
 
+" fswitch
+"
+"let g:fswitchlocs = './,reg:/src/include/,./include,./,../include,../../include'
+"let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
+au! BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
+au! BufEnter *.cc let b:fswitchdst = 'hh,hpp,h' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
+au! BufEnter *.cpp let b:fswitchdst = 'hpp,h,hh' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
+
 "
 " csv.vim
 "
