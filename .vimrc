@@ -87,8 +87,10 @@ let g:cpp_simple_highlight = 1
 " powerline
 "
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
 set t_Co=256
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 "
 " Bind <leader>y to forward last-yanked text to Clipper

@@ -44,12 +44,21 @@ elif [ "${HOST_OS}" == "Darwin" ]; then
 fi
 
 #
+# install the fd (for fzf)
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  command -v fd --version || sudo apt --yes install fd
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v fd --version || brew install fd
+fi
+
+#
 # install the ripgrep (for fzf)
 #
 if [ "${HOST_OS}" == "Linux" ]; then
-  command -v fd --version || sudo apt --yes install ripgrep
+  command -v rg --version || sudo apt --yes install ripgrep
 elif [ "${HOST_OS}" == "Darwin" ]; then
-  command -v fd --version || brew install ripgrep
+  command -v rg --version || brew install ripgrep
 fi
 
 #
