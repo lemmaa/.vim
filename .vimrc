@@ -9,209 +9,63 @@ set encoding=utf-8
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
 set ignorecase
 set colorcolumn=100
 set clipboard=unnamed
-"set foldmethod=syntax
-"set foldlevelstart=99
-"set paste
-"set mouse=a
+" set paste
+" set mouse=a
 
-nmap <F8> :TagbarToggle<CR>
+" set foldmethod=syntax
+" set foldlevelstart=99
 
-"" split navigations
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-colorscheme codedark
-"let g:airline_theme = 'dark'
-
-"
-" NERDTree
-"
-nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-let g:NERDTreeNodeDelimiter = "\u00a0"
-
-"
-" airline
-"
-let g:airline_powerline_fonts = 1
-let g:promptline_powerline_symbols = 1
-
-"
-" GVim Config
-"
-"set guifont=D2Coding:h16
-set guifont=SF\ Mono\ Regular\ Nerd\ Font\ Complete:h11
+" gui config
+" set guifont=D2Coding:h16
+set guifont=SF\ Mono\ Regular:h11
 set guioptions-=m   " remove Menu bar
 set guioptions-=T   " remove Tool bar
 set guioptions-=r   " remove Right bar
 set guioptions-=L   " remove Left bar
 
-"
-" fzf.vim
-"
-set rtp+=~/.fzf
-
-"
-" clang-format
-"
-let g:clang_format#detect_style_file = 1
-"let g:clang_format#auto_format = 1
-"let g:clang_format#auto_format_on_insert_leave = 1
-"let g:clang_format#auto_formatexpr = 1
-"let g:clang_format#enable_fallback_style = 1
-
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11"}
-
-" map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-" if you install vim-operator-user
-"autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-
-"
-" C++17
-"
-let g:syntastic_cpp_checkers = ['gcc']
-let g:syntastic_cpp_compiler = 'gcc'
-let g:syntastic_cpp_compiler_options = '-std=c++17'
-
-let g:cpp_class_scope_highlight = 1
-let g:cpp_class_decl_highlight = 1
-"let g:cpp_experimental_simple_template_highlight = 1
-"let g:cpp_experimental_template_highlight = 1
-"let g:cpp_no_function_highlight = 1
-let g:cpp_concepts_highlight = 1
-let g:cpp_simple_highlight = 1
-
-"
-" powerline
-"
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set t_Co=256
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
-"
-" Bind <leader>y to forward last-yanked text to Clipper
-"
-nnoremap <leader>y :call system('nc ${CLIPPER_SERVER} 8377', @0)<CR>
-
-"
-" ConqueGDB Setting
-"
-let g:ConqueTerm_Color=2            " 1: strip color after 200 line, 2: always with color
-let g:ConqueTerm_CloseOnEnd=1       " close conque when program ends running
-let g:ConqueTerm_StartMessages=0    " display warning message if conqueTerm is configed incorrect
-
-"
-" indentLine
-"
-"let g:indentLine_enabled = 0
-"let g:indentLine_char = '|'
-let g:indentLine_char = '┆'
-"let g:indentLine_char = '│'
-let g:indentLine_setColors = 1
-let g:indentLine_color_term = 239
-"let g:indentLine_bgcolor_term = 202
-let g:indentLine_color_gui = '#A4E57E'
-"let g:indentLine_bgcolor_gui = '#FF5F00'
-let g:indentLine_color_tty_light = 7 " (default: 4)
-"let g:indentLine_color_dark = 1 " (default: 2)
-
-"
-" SimpylFold
-"
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_docstring = 1
-let b:SimpylFold_fold_docstring = 1
-let g:SimpylFold_fold_import = 1
-let b:SimpylFold_fold_import = 1
-
-"
-" fastfold
-"
-let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
-
-"
-" rainbow_parentheses
-"
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
-" List of colors that you do not want. ANSI code or #RRGGBB
-let g:rainbow#blacklist = [233, 234]
-
-"
-" vim-hightlightyank
-"
-let g:highlightedyank_highlight_duration = 1000
-"highlight HighlightedyankRegion cterm=reverse gui=reverse
-if !exists('##TextYankPost')
-	  map y <Plug>(highlightedyank)
-	endif
-
-"
-" switch.vim
-"
-let g:switch_mapping = ""
-let b:switch_custom_definitions = [
-	    \   ['foo', 'bar', 'baz'],
-      \   {
-      \     '\<[a-z0-9]\+_\k\+\>': {
-      \       '_\(.\)': '\U\1'
-      \     },
-      \     '\<[a-z0-9]\+[A-Z]\k\+\>': {
-      \       '\([A-Z]\)': '_\l\1'
-      \     },
-      \   }
-      \ ]
-
-" fswitch
-"
-"let g:fswitchlocs = './,reg:/src/include/,./include,./,../include,../../include'
-"let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
-au! BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
-au! BufEnter *.cc let b:fswitchdst = 'hh,hpp,h' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
-au! BufEnter *.cpp let b:fswitchdst = 'hpp,h,hh' | let b:fswitchlocs = '.,./inc,.include,../inc,../include,reg:/src/include/'
-
-"
-" csv.vim
-"
-"let g:csv_move_folds = 1
-"let g:csv_highlight_column = 'y'
-"let b:csv_thousands_sep = ' '
-"let b:csv_decimal_sep = ','
+runtime .coc.nvim
+runtime .ConqueGDB
+" runtime .csv.vim
+runtime .fastfold
+runtime .fswitch
+runtime .fzf
+runtime .indentLine
+runtime .nerdtree
+runtime .rainbow_parentheses
+runtime .SymplylFold
+runtime .switch.vim
+runtime .syntastic
+runtime .tagbar
+runtime .vim-clang-format
+runtime .vim-codedark
+runtime .vim-gitgutter
+runtime .vim-hightlightyank
 
 "
 " python formatting
 "
 " au BufNewFile,BufRead *.py
-"     \ set tabstop=4
-"     \ set shiftwidth=4
-"     \ set softtabstop=4
-"     \ set textwidth=79
-"     \ set colorcolumn=80
-"     \ set expandtab
-"     \ set autoindent
-"     \ set fileformat=unix
+" 			\ set tabstop=4
+" 			\ set shiftwidth=4
+" 			\ set softtabstop=4
+" 			\ set textwidth=79
+" 			\ set colorcolumn=80
+" 			\ set expandtab
+" 			\ set autoindent
+" 			\ set fileformat=unix
 
 "
 " mark unnecessary white space to red
 "
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
 
-"
-" coc.nvim
-"
-runtime .coc.nvim
