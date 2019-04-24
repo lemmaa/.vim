@@ -1,0 +1,4 @@
+"
+" YouCompleteMe
+"
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR> 

@@ -50,6 +50,7 @@ runtime .vim-clang-format
 runtime .vim-codedark
 runtime .vim-gitgutter
 runtime .vim-hightlightyank
+runtime .YouCompleteMe
 
 "
 " python formatting
