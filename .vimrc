@@ -10,6 +10,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+set noshowmode
 set ignorecase
 set colorcolumn=100
 set clipboard=unnamed
@@ -69,4 +70,3 @@ runtime .YouCompleteMe
 " mark unnecessary white space to red
 "
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
-
