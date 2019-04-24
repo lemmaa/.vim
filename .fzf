@@ -1,0 +1,4 @@
+"
+" fzf.vim
+"
+set rtp+=~/.fzf

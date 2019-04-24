@@ -1,0 +1,4 @@
+"
+" vim-nerdtree-tabs
+"
+nmap <C-n> :NERDTreeTabsToggle<CR>
