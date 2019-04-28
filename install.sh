@@ -75,7 +75,7 @@ fi
 #
 if [ "${HOST_OS}" == "Linux" ]; then
   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-  sudo apt-get install -y nodejs npm
+  sudo apt-get install -y nodejs 
 	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 elif [ "${HOST_OS}" == "Darwin" ]; then
   command -v node --version || brew install node.js
@@ -87,7 +87,7 @@ fi
 # install ccls 
 #
 if [ "${HOST_OS}" == "Linux" ]; then
-  echo " ******Need to install ccls ******"
+  command -v ccls --version || echo "****** Need to install ccls ******"
 elif [ "${HOST_OS}" == "Darwin" ]; then
   command -v ccls --version || brew install ccls
 fi
