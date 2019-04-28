@@ -62,11 +62,34 @@ elif [ "${HOST_OS}" == "Darwin" ]; then
 fi
 
 #
-# install node v10.x.x 
+# install the fd (for fzf)
 #
 if [ "${HOST_OS}" == "Linux" ]; then
-	curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-	sudo apt-get install -y nodejs npm
+  command -v fd --version || sudo apt --yes install fd
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v fd --version || brew install fd
+fi
+
+#
+# install node v10.x.x & yarn for coc.nvim
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  sudo apt-get install -y nodejs npm
+	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v node --version || brew install node.js
+  command -v npm || brew install npm
+	command -v yarn --version || brew install yarn
+fi
+
+#
+# install ccls 
+#
+if [ "${HOST_OS}" == "Linux" ]; then
+  echo " ******Need to install ccls ******"
+elif [ "${HOST_OS}" == "Darwin" ]; then
+  command -v ccls --version || brew install ccls
 fi
 
 ##

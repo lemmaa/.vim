@@ -1,2 +1,4 @@
 view
 node_modules
+bundle/_backup
+yarn.lock
