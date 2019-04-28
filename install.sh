@@ -62,27 +62,35 @@ elif [ "${HOST_OS}" == "Darwin" ]; then
 fi
 
 #
-# initialize YCM plug-in & compile language support module
+# install node v10.x.x 
 #
 if [ "${HOST_OS}" == "Linux" ]; then
-  command -v node --version || sudo apt --yes install nodejs
-  command -v npm || sudo apt --yes install npm
-  command -v mono --version || sudo apt --yes install mono-devel
-  command -v go version || sudo apt --yes install golang
-elif [ "${HOST_OS}" == "Darwin" ]; then
-  command -v node --version || brew install node.js
-  command -v npm || brew install npm
-  command -v mono --version || brew install mono
-  command -v go version || brew install golang
+	curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	sudo apt-get install -y nodejs npm
 fi
 
-#
-# install rust cargo (for YCM)
-#
-command -v cargo > /dev/null 2>&1 || (curl https://sh.rustup.rs -sSf | sh)
-pushd ${BUNDLE_PATH}/YouCompleteMe
-PATH="$HOME/.cargo/bin:$PATH" ./install.py --all
-popd
+##
+## initialize YCM plug-in & compile language support module
+##
+#if [ "${HOST_OS}" == "Linux" ]; then
+#  command -v node --version || sudo apt --yes install nodejs
+#  command -v npm || sudo apt --yes install npm
+#  command -v mono --version || sudo apt --yes install mono-devel
+#  command -v go version || sudo apt --yes install golang
+#elif [ "${HOST_OS}" == "Darwin" ]; then
+#  command -v node --version || brew install node.js
+#  command -v npm || brew install npm
+#  command -v mono --version || brew install mono
+#  command -v go version || brew install golang
+#fi
+
+##
+## install rust cargo (for YCM)
+##
+#command -v cargo > /dev/null 2>&1 || (curl https://sh.rustup.rs -sSf | sh)
+#pushd ${BUNDLE_PATH}/YouCompleteMe
+#PATH="$HOME/.cargo/bin:$PATH" ./install.py --all
+#popd
 
 #
 # create a symbolic link of `.vimrc` at $HOME

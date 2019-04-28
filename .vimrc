@@ -10,12 +10,13 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-set noshowmode
 set ignorecase
+set cursorline
+set noshowmode
 set colorcolumn=100
 set clipboard=unnamed
+set mouse=a
 " set paste
-" set mouse=a
 
 " set foldmethod=syntax
 " set foldlevelstart=99
@@ -36,7 +37,7 @@ set guioptions-=L   " remove Left bar
 
 runtime .coc.nvim
 runtime .ConqueGDB
-" runtime .csv.vim
+runtime .csv.vim
 runtime .fastfold
 runtime .fswitch
 runtime .fzf
@@ -48,10 +49,12 @@ runtime .switch.vim
 runtime .syntastic
 runtime .tagbar
 runtime .vim-clang-format
-runtime .vim-codedark
 runtime .vim-gitgutter
 runtime .vim-hightlightyank
-runtime .YouCompleteMe
+
+set cmdheight=1
+set background=dark
+colorscheme codedark
 
 "
 " python formatting
