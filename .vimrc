@@ -10,8 +10,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-set fillchars+=vert:⎸
-set fillchars+=diff:\ 
+set fillchars=vert:⎸,diff:\ ,fold:-
 
 set ignorecase
 set cursorline
@@ -58,6 +57,8 @@ runtime .vim-hightlightyank
 set cmdheight=1
 set background=dark
 colorscheme codedark
+hi folded ctermfg=yellow guifg=yellow cterm=none gui=none
+hi foldcolumn ctermfg=yellow guifg=yellow
 
 "
 " python formatting
