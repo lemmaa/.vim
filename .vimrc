@@ -10,7 +10,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-set fillchars=vert:⎸,diff:\ ,fold:-
+" set fillchars+=vert:⎸
+set fillchars+=diff:\ ,fold:-
 
 set ignorecase
 set cursorline
@@ -63,15 +64,15 @@ hi foldcolumn ctermfg=yellow guifg=yellow
 "
 " python formatting
 "
-" au BufNewFile,BufRead *.py
-" 			\ set tabstop=4
-" 			\ set shiftwidth=4
-" 			\ set softtabstop=4
-" 			\ set textwidth=79
-" 			\ set colorcolumn=80
-" 			\ set expandtab
-" 			\ set autoindent
-" 			\ set fileformat=unix
+au BufNewFile,BufRead *.py
+			\ set tabstop=4
+			\ set shiftwidth=4
+			\ set softtabstop=4
+			\ set textwidth=79
+			\ set colorcolumn=80
+			\ set expandtab
+			\ set autoindent
+			\ set fileformat=unix
 
 "
 " mark unnecessary white space to red
