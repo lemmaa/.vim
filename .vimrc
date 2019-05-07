@@ -31,8 +31,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " gui config
-" set guifont=D2Coding:h16
-set guifont=SF\ Mono\ Regular:h11
+set guifont=D2Coding:h14
+" set guifont=SF\ Mono\ Regular:h11
 set guioptions-=m   " remove Menu bar
 set guioptions-=T   " remove Tool bar
 set guioptions-=r   " remove Right bar
