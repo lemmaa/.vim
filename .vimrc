@@ -13,6 +13,7 @@ set softtabstop=2
 " set fillchars+=vert:⎸
 set fillchars+=diff:\ ,fold:-
 
+set expandtab
 set ignorecase
 set cursorline
 set noshowmode
