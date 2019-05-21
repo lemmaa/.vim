@@ -66,14 +66,14 @@ hi foldcolumn ctermfg=yellow guifg=yellow
 " python formatting
 "
 au BufNewFile,BufRead *.py
-			\ set tabstop=4
-			\ set shiftwidth=4
-			\ set softtabstop=4
-			\ set textwidth=79
-			\ set colorcolumn=80
-			\ set expandtab
-			\ set autoindent
-			\ set fileformat=unix
+			\ set autoindent |
+			\ set colorcolumn=80 |
+			\ set expandtab |
+			\ set fileformat=unix |
+			\ set shiftwidth=4 |
+			\ set softtabstop=4 |
+			\ set tabstop=4 |
+			\ set textwidth=79 
 
 "
 " mark unnecessary white space to red
