@@ -22,6 +22,7 @@ set clipboard=unnamed
 set mouse=a
 " set paste
 
+set nofoldenable
 " set foldmethod=syntax
 " set foldlevelstart=99
 
