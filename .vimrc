@@ -80,3 +80,16 @@ au BufNewFile,BufRead *.py
 " mark unnecessary white space to red
 "
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
+
+" custom colors
+hi!      myCursorWordMatch ctermfg=238 ctermbg=216 guifg=#444444 guibg=#f2c68a
+hi!      CursorLine        term=reverse ctermbg=00 guibg=darkgrey
+hi! link CocHighlightText  Visual
+" hi! CursorLine       cterm=NONE ctermbg=00 ctermfg=NONE guibg=darkgrey guifg=white
+" hi! CocHighlightText cterm=NONE ctermbg=02 ctermfg=white guibg=darkred guifg=white
+
+" custom key mapping
+nnoremap <F5> :match CursorWordMatch /<C-R><C-W>/<CR>
+
+" autocmd
+autocmd CursorMoved * match

@@ -106,7 +106,6 @@ let g:lightline = {
       \ },
       \ }
 
-" Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
@@ -139,3 +138,29 @@ endfunction
 
 let g:coc_snippet_next = '<Tab>'
 let g:coc_snippet_prev = '<S-Tab>'
+
+" bases
+nn <silent> zzb :call CocLocations('ccls','$ccls/inheritance')<cr>
+" bases of up to 3 levels
+nn <silent> zzB :call CocLocations('ccls','$ccls/inheritance',{'levels':3})<cr>
+" derived
+nn <silent> zzd :call CocLocations('ccls','$ccls/inheritance',{'derived':v:true})<cr>
+" derived of up to 3 levels
+nn <silent> zzD :call CocLocations('ccls','$ccls/inheritance',{'derived':v:true,'levels':3})<cr>
+
+" caller
+nn <silent> zzc :call CocLocations('ccls','$ccls/call')<cr>
+" callee
+nn <silent> zzC :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
+
+" $ccls/member
+" member variables / variables in a namespace
+nn <silent> zzm :call CocLocations('ccls','$ccls/member')<cr>
+" member functions / functions in a namespace
+nn <silent> zzf :call CocLocations('ccls','$ccls/member',{'kind':3})<cr>
+" nested classes / types in a namespace
+nn <silent> zzs :call CocLocations('ccls','$ccls/member',{'kind':2})<cr>
+
+nmap <silent> zzt <Plug>(coc-type-definition)<cr>
+nn <silent> zzv :call CocLocations('ccls','$ccls/vars')<cr>
+nn <silent> zzV :call CocLocations('ccls','$ccls/vars',{'kind':1})<cr>
