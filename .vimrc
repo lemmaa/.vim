@@ -94,3 +94,6 @@ nnoremap <F5> :match myCursorWordMatch /<C-R><C-W>/<CR>
 
 " autocmd
 autocmd CursorMoved * match
+
+let g:ClipperAddress = $CLIPPER_SERVER
+call clipper#set_invocation('nc -N $CLIPPER_SERVER 8377')
