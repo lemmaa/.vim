@@ -5,6 +5,7 @@ syntax on
 filetype plugin indent on
 
 set encoding=utf-8
+set textwidth=100
 
 set tabstop=2
 set shiftwidth=2
@@ -69,14 +70,14 @@ hi foldcolumn ctermfg=yellow guifg=yellow
 " python formatting
 "
 au BufNewFile,BufRead *.py
-			\ set autoindent |
-			\ set colorcolumn=80 |
-			\ set expandtab |
-			\ set fileformat=unix |
-			\ set shiftwidth=4 |
-			\ set softtabstop=4 |
-			\ set tabstop=4 |
-			\ set textwidth=79 
+\ set autoindent |
+\ set colorcolumn=80 |
+\ set expandtab |
+\ set fileformat=unix |
+\ set shiftwidth=4 |
+\ set softtabstop=4 |
+\ set tabstop=4 |
+\ set textwidth=79 
 
 "
 " mark unnecessary white space to red
