@@ -11,8 +11,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+set laststatus=2
+
 " set fillchars+=vert:⎸
-set fillchars+=diff:\ ,fold:-
+" set fillchars+=diff:\ ,fold:-
 
 set expandtab
 set ignorecase
@@ -36,35 +38,37 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " gui config
-set guifont=D2Coding:h14
-" set guifont=SF\ Mono\ Regular:h11
+" set guifont=D2Coding:h14
+set guifont=SFMonoNerdFontC-Regular:h13
 set guioptions-=m   " remove Menu bar
 set guioptions-=T   " remove Tool bar
 set guioptions-=r   " remove Right bar
 set guioptions-=L   " remove Left bar
 
 runtime .coc.nvim
-runtime .ConqueGDB
-runtime .csv.vim
-runtime .fastfold
-runtime .fswitch
+" runtime .ConqueGDB
+" runtime .csv.vim
+" runtime .fastfold
+" runtime .fswitch
 runtime .fzf
 runtime .indentLine
 runtime .nerdtree
-runtime .rainbow_parentheses
-runtime .SymplylFold
-runtime .switch.vim
-runtime .syntastic
+" runtime .rainbow_parentheses
+" runtime .SymplylFold
+" runtime .switch.vim
+" runtime .syntastic
 runtime .tagbar
 runtime .vim-clang-format
 runtime .vim-gitgutter
 runtime .vim-hightlightyank
 
 set cmdheight=1
-set background=dark
-colorscheme codedark
-hi folded ctermfg=yellow guifg=yellow cterm=none gui=none
-hi foldcolumn ctermfg=yellow guifg=yellow
+" set background=dark
+" colorscheme codedark
+
+colorscheme github
+let g:lightline = { 'colorscheme': 'github' }
+" let g:airline_theme = "github"
 
 "
 " python formatting
@@ -85,10 +89,12 @@ au BufNewFile,BufRead *.py
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.cc,*.cpp,*.c++,*.h,*.hpp,*.h++,*.sh match BadWhitespace /\s\+$/
 
 " custom colors
-hi!      myCursorWordMatch              ctermfg=015 ctermbg=208 guifg=#000000 guibg=#ff8700
-hi!      CursorLine        term=reverse             ctermbg=000               guibg=darkgrey
-hi!      Search                                     ctermbg=022               guibg=#005f00
-hi!      CocHighlightText  term=reverse             ctermbg=024               guibg=#264f78
+" hi  folded            cterm=none    ctermfg=yellow  gui=none        guifg=yellow
+" hi  foldcolumn                      ctermfg=yellow                  guifg=yellow
+" hi! myCursorWordMatch               ctermfg=015     ctermbg=208     guifg=#000000 guibg=#ff8700
+" hi! CursorLine        term=reverse                  ctermbg=000                   guibg=darkgrey
+" hi! Search                                          ctermbg=022                   guibg=#005f00
+" hi! CocHighlightText  term=reverse                  ctermbg=222                   guibg=#f2e496
 
 " custom key mapping
 nnoremap <F5> :match myCursorWordMatch /<C-R><C-W>/<CR>
