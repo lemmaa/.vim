@@ -4,15 +4,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/vim-cpp-modern"]
-	path = bundle/vim-cpp-modern
-	url = https://github.com/bfrg/vim-cpp-modern.git
-[submodule "bundle/tabular"]
-	path = bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -25,81 +16,39 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "bundle/vim-sensible"]
-	path = bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule "bundle/vim-tabbar"]
-	path = bundle/vim-tabbar
-	url = git://github.com/drmingdrmer/vim-tabbar.git
-[submodule "bundle/Conque-GDB"]
-	path = bundle/Conque-GDB
-	url = https://github.com/vim-scripts/Conque-GDB.git
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "bundle/vim-stay"]
 	path = bundle/vim-stay
 	url = https://github.com/zhimsel/vim-stay.git
-[submodule "bundle/SimpylFold"]
-	path = bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "bundle/FastFold"]
-	path = bundle/FastFold
-	url = https://github.com/Konfekt/FastFold.git
 [submodule "bundle/vim-nerdtree-tabs"]
 	path = bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "bundle/SudoEdit.vim"]
 	path = bundle/SudoEdit.vim
 	url = https://github.com/chrisbra/SudoEdit.vim.git
-[submodule "bundle/csv.vim"]
-	path = bundle/csv.vim
-	url = https://github.com/chrisbra/csv.vim.git
 [submodule "bundle/indentLine"]
 	path = bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "bundle/rainbow_parentheses"]
-	path = bundle/rainbow_parentheses
-	url = https://github.com/junegunn/rainbow_parentheses.vim.git
-[submodule "bundle/vim-fswitch"]
-	path = bundle/vim-fswitch
-	url = https://github.com/derekwyatt/vim-fswitch.git
-[submodule "bundle/vim-commentary"]
-	path = bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/vim-highlightedyank"]
 	path = bundle/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
-[submodule "bundle/switch.vim"]
-	path = bundle/switch.vim
-	url = https://github.com/AndrewRadev/switch.vim.git
 [submodule "bundle/coc.nvim"]
 	path = bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
 [submodule "bundle/lightline.vim"]
 	path = bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "bundle/vim-indent-object"]
-	path = bundle/vim-indent-object
-	url = https://github.com/michaeljsmith/vim-indent-object.git
 [submodule "bundle/vim-clipper"]
 	path = bundle/vim-clipper
 	url = https://github.com/wincent/vim-clipper.git
+[submodule "bundle/vim-colors-github"]
+	path = bundle/vim-colors-github
+	url = https://github.com/cormacrelf/vim-colors-github.git
