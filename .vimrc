@@ -18,6 +18,7 @@ set laststatus=2
 
 set expandtab
 set ignorecase
+set smartcase
 set cursorline
 set noshowmode
 set colorcolumn=100
@@ -28,8 +29,38 @@ set incsearch
 " set paste
 
 set nofoldenable
-" set foldmethod=syntax
+set foldmethod=syntax
 " set foldlevelstart=99
+
+function! FoldText()
+  " Description: Folding configuration
+
+  " TODO ALE indication column is not counted
+  let winwidth = winwidth(0)
+        \ - &fdc
+        \ - &number*&numberwidth
+        \ - (&l:signcolumn is# 'yes' ? 2 : 0)
+
+  let foldlinecount = foldclosedend(v:foldstart) - foldclosed(v:foldstart) + 1
+  let foldinfo = "   ( " . string(foldlinecount) . " lines )   "
+
+  let tabreplace = repeat(" ", &tabstop)
+  let foldstartline = substitute(getline(v:foldstart), '[\t]', tabreplace, 'g')
+
+  if &foldmethod == "indent"
+    let foldsummary = foldstartline . "..."
+  else
+    let foldendline = substitute(getline(v:foldend), '^\s*\(.\{-}\)\s*$', '\1', '')
+    let foldsummary = foldstartline . "..." . foldendline
+  endif
+  let cuttedsummary = strpart(foldsummary, 0 , winwidth - len(foldinfo))
+
+  let fillcharcount = winwidth - len(cuttedsummary) - len(foldinfo)
+
+  return cuttedsummary . repeat(" ",fillcharcount) . foldinfo
+endfunction
+
+set foldtext=FoldText()
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
