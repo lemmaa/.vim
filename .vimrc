@@ -71,6 +71,11 @@ nnoremap <C-H> <C-W><C-H>
 " gui config
 " set guifont=D2Coding:h14
 set guifont=SFMonoNerdFontC-Regular:h13
+
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 set guioptions-=m   " remove Menu bar
 set guioptions-=T   " remove Tool bar
 set guioptions-=r   " remove Right bar
